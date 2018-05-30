@@ -55,3 +55,12 @@ Date: Wed, 30 May 2018 15:16:48 GMT
 5. Use /week endpoint to find all events within one week for a specified calendar and user
 
 6. Use the /month endpoint to find all events within one month for a specified calenar and user
+
+NOTE: Steps 4-6 were run after these curl commands (to fill the app with data)
+```
+//curl -i -H "Content-Type:application/json" -X POST localhost:8080/events -d '{"calendarName":"Personal","calendarUser":"Chuck","eventTitle":"Birthday Party","eventDate":"2018-05-31T12:00:00.000-0000","location":"Houston","attendeeList":["Bill","Will","Phil"],"reminderTime":"2018-05-30T12:00:00.000-0000","reminderSent":false}'
+//curl -i -H "Content-Type:application/json" -X POST localhost:8080/events -d '{"calendarName":"Personal","calendarUser":"Chuck","eventTitle":"Flight","eventDate":"2018-06-05T12:00:00.000-0000","location":"Dallas","attendeeList":["Jane","John"],"reminderTime":"2018-06-04T12:00:00.000-0000","reminderSent":false}'
+//curl -i -H "Content-Type:application/json" -X POST localhost:8080/events -d '{"calendarName":"Personal","calendarUser":"Chuck","eventTitle":"Concert","eventDate":"2018-06-18T12:00:00.000-0000","location":"Atlanta","attendeeList":["Seymour"],"reminderTime":"2018-06-17T12:00:00.000-0000","reminderSent":false}'
+//curl -i -H "Content-Type:application/json" -X POST localhost:8080/events -d '{"calendarName":"Personal","calendarUser":"Chuck","eventTitle":"Anniversary","eventDate":"2018-07-01T12:00:00.000-0000","location":"Alaska","attendeeList":["Willie","Will","William"],"reminderTime":"2018-06-30T12:00:00.000-0000","reminderSent":false}'
+
+```
