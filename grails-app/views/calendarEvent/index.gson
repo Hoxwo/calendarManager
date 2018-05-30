@@ -1,0 +1,8 @@
+import calendarmanager.CalendarEvent
+
+model {
+	Iterable<CalendarEvent> calendarEventList
+}
+
+json tmpl.calendarEvent(calendarEventList ?: [])
+

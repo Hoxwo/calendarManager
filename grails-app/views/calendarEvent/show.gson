@@ -1,0 +1,7 @@
+import calendarmanager.CalendarEvent
+
+model {
+	CalendarEvent calendarEvent
+}
+
+json tmpl.calendarEvent(calendarEvent)

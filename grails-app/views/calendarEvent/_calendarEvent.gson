@@ -1,0 +1,13 @@
+import calendarmanager.CalendarEvent
+
+model {
+	CalendarEvent calendarEvent
+}
+
+json {
+	id calendarEvent.id
+	"Calendar" "Calendar: ${calendarEvent.calendarName} - User: ${calendarEvent.calendarUser}" 
+	"Location and Date" "Location: ${calendarEvent.location} - Event Date: ${calendarEvent.eventDate}"
+	"Reminder" "Reminder Time: ${calendarEvent.reminderTime} - Reminder Sent? ${calendarEvent.reminderSent}"
+	"Attendees" "${calendarEvent.attendeeList}"
+} 
