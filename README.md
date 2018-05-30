@@ -22,8 +22,33 @@ Date: Wed, 30 May 2018 15:12:06 GMT
 ```
 
 2. Update (PUT) events using their Hibernate ID and JSON
+```
+(xenial)kc@localhost:~/Desktop/calendarManager_clean/calendarManager$ curl -i -H "Content-Type:application/json" -X PUT localhost:8080/events/1 -d '{"location":"Atlanta"}'UT localhost:8080/events/1 -d '{"location":HTTP/1.1 200 
+X-Application-Context: application:development
+Location: http://localhost:8080/events/1
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 30 May 2018 15:14:46 GMT
+
+{"id":1,"Calendar":"Calendar: Personal - User: Chuck","Location and Date":"Location: Atlanta - Event Date: 2018-05-31 08:00:00.0","Reminder":"Reminder Time: 2018-05-30 08:00:00.0 - Reminder Sent? false","Attendees":"[]"}
+```
 
 3. DELETE events using their hibernate ID
+```
+(xenial)kc@localhost:~/Desktop/calendarManager_clean/calendarManager$ curl -i -H "Content-Type:application/json" -X DELETE localhost:8080/events/1                            
+HTTP/1.1 204 
+X-Application-Context: application:development
+Date: Wed, 30 May 2018 15:16:37 GMT
+
+(xenial)kc@localhost:~/Desktop/calendarManager_clean/calendarManager$ curl -i -H "Content-Type:application/json" -X GET localhost:8080/events  
+HTTP/1.1 200 
+X-Application-Context: application:development
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 30 May 2018 15:16:48 GMT
+
+[]
+```
 
 4. Use /day endpoint to find all events within one day for a specified calendar and user
 
